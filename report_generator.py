@@ -5,26 +5,11 @@ import math
 
 
 study_ids = [
-    "9ER2B",
-    "X9A2B",
-    "KHJF5",
-    # "TS1R0",
-    # "14B76",
-    # "WJIBA",
-    # "IW5OM",
-    # "7WQCU",
-    # "ZYVQF",
-    # "XC52O",
-    # "XQANO",
-    # "X1D48",
-    # "K85JA",
-    # "C7DAN",
-    # "R3CMO",
-    # "GFBA5",
-    # "4HTJC",
-    # "4R92V",
-    # "54FWH",
-    # "8IGU2",
+    "VXY1B",
+    "GOMP5",
+    "W92EY",
+    "VJGFB",
+    "IO6KM"
 ]
 
 covid_symptoms = [
@@ -111,7 +96,7 @@ tbi_symptoms = [
     "pain"
 ]
 
-data_file = "COAST_Data_9_25_23.xlsx"
+data_file = "/Users/allisongrossberg/Desktop/symptom_report/COAST_Data_9_25_23.xlsx"
 
 def format_symptom(symptom):
     return symptom.replace("_", " ").title()
