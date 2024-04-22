@@ -3,7 +3,7 @@ from docxtpl import DocxTemplate
 from datetime import datetime
 import math
 
-DATA_FILE = "/Users/allisongrossberg/Library/Mobile Documents/com~apple~CloudDocs/Graduate School/COAST_Study/symptom_report/COAST_Data_9_25_23.xlsx"
+DATA_FILE = ""
 TEMPLATE_FILE = "coast_report_template.docx"
 
 #List of Study IDs to generate reports for
