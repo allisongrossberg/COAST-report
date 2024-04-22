@@ -1,4 +1,8 @@
 #generated documents
 reports/*
 
+#cache files
 .DS_Store
+
+#notebooks
+*.ipynb
