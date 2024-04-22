@@ -3,14 +3,11 @@ from docxtpl import DocxTemplate
 from datetime import datetime
 import math
 
+DATA_FILE = "/Users/allisongrossberg/Library/Mobile Documents/com~apple~CloudDocs/Graduate School/COAST_Study/symptom_report/COAST_Data_9_25_23.xlsx"
+TEMPLATE_FILE = "coast_report_template.docx"
 
-study_ids = [
-    "VXY1B",
-    "GOMP5",
-    "W92EY",
-    "VJGFB",
-    "IO6KM"
-]
+#List of Study IDs to generate reports for
+study_ids = []
 
 covid_symptoms = [
     "nasal_congestion",
@@ -96,13 +93,12 @@ tbi_symptoms = [
     "pain"
 ]
 
-data_file = "/Users/allisongrossberg/Desktop/symptom_report/COAST_Data_9_25_23.xlsx"
 
 def format_symptom(symptom):
     return symptom.replace("_", " ").title()
 
 def generate_report(study_id):
-    data_df = pd.read_excel(data_file, index_col=False)
+    data_df = pd.read_excel(DATA_FILE, index_col=False)
     participant_df = data_df[data_df["participant_id"] == study_id]
 
     participant_dict = participant_df.to_dict("records")[0]
@@ -408,7 +404,7 @@ def generate_report(study_id):
         report_dict.update({"vaccine_rows": [{"label": "", "date": "No Vaccination History", "type": ""}]})
 
 
-    doc = DocxTemplate("coast_report_template.docx")
+    doc = DocxTemplate(TEMPLATE_FILE)
     doc.render(report_dict)
     today = datetime.today().strftime('%Y-%m-%d')
     report_string = f"reports/{last_name}_{first_name}_y1_qq_report_{today}.docx"
